@@ -106,7 +106,7 @@ export class CreateUpdateComponent {
                 <label htmlFor="role">Rol</label>
                 <input type="text" id="role" name="role" value={this.Data.role} placeholder="Rol.." onInput={(event) => this.handleChange(event, "role")}></input>
 
-                <input type="submit" value="Submit"></input>
+                <input type="submit" value="Editar"></input>
               </form>
             </div>
           </div>
@@ -139,7 +139,7 @@ export class CreateUpdateComponent {
                <label htmlFor="pass">Contraseña</label>
                <input type="password" id="pass" name="pass" placeholder="Contraseña.." onInput={(event) => this.handleChange(event, "pass")}></input>
 
-               <input type="submit" value="Submit"></input>
+               <input type="submit" value="Crear"></input>
              </form>
            </div>
          </div>
