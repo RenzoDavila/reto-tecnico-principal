@@ -6,29 +6,26 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface CreateUpdate {
+        "_id": string;
+    }
+    interface ProofComponent {
     }
     interface ReadDelete {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLCreateUpdateElement extends Components.CreateUpdate, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLCreateUpdateElement: {
+        prototype: HTMLCreateUpdateElement;
+        new (): HTMLCreateUpdateElement;
+    };
+    interface HTMLProofComponentElement extends Components.ProofComponent, HTMLStencilElement {
+    }
+    var HTMLProofComponentElement: {
+        prototype: HTMLProofComponentElement;
+        new (): HTMLProofComponentElement;
     };
     interface HTMLReadDeleteElement extends Components.ReadDelete, HTMLStencilElement {
     }
@@ -37,29 +34,22 @@ declare global {
         new (): HTMLReadDeleteElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "create-update": HTMLCreateUpdateElement;
+        "proof-component": HTMLProofComponentElement;
         "read-delete": HTMLReadDeleteElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface CreateUpdate {
+        "_id"?: string;
+    }
+    interface ProofComponent {
     }
     interface ReadDelete {
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "create-update": CreateUpdate;
+        "proof-component": ProofComponent;
         "read-delete": ReadDelete;
     }
 }
@@ -67,7 +57,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "create-update": LocalJSX.CreateUpdate & JSXBase.HTMLAttributes<HTMLCreateUpdateElement>;
+            "proof-component": LocalJSX.ProofComponent & JSXBase.HTMLAttributes<HTMLProofComponentElement>;
             "read-delete": LocalJSX.ReadDelete & JSXBase.HTMLAttributes<HTMLReadDeleteElement>;
         }
     }
